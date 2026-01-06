@@ -1,319 +1,234 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bubble Agency – Landing Page</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    >
+    <title>Bubble Agency – Modern Bubble App Solutions</title>
+    <meta name="description" content="Expert Bubble agency for rapid No-Code MVPs, prototyping, and Bubble app launches.">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
-      /* Hero custom bubble background */
-      .hero-bg {
-        background: linear-gradient(160deg, #aae6ff 0%, #e9d3fd 100%);
-        padding-top: 64px;
-        padding-bottom: 64px;
-        position: relative;
+      /* Bubble-themed custom styles */
+      .bubble-bg {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        z-index: 0;
         overflow: hidden;
+        pointer-events: none;
       }
       .bubble {
         position: absolute;
         border-radius: 50%;
-        opacity: 0.25;
-        filter: blur(4px);
+        opacity: 0.15;
+        background: linear-gradient(135deg, #70e1f5 0%, #ffd6e0 100%);
+        animation: float 8s infinite ease-in-out alternate;
       }
-      .bubble1 {
-        width: 160px;
-        height: 160px;
-        background: #6a93ff;
-        top: 10%;
-        left: -60px;
+      .bubble1 { width: 160px; height: 160px; left: 20%; top: 10%; animation-delay: 0s; }
+      .bubble2 { width: 80px;  height: 80px;  left: 60%; top: 25%; animation-delay: 1s; }
+      .bubble3 { width: 120px; height: 120px; left: 40%; top: 60%; animation-delay: 2.5s; }
+      .bubble4 { width: 60px;  height: 60px;  left: 75%; top: 50%; animation-delay: 4s; }
+      .bubble5 { width: 200px; height: 200px; left: 10%; top: 70%; animation-delay: 5s; }
+      @keyframes float {
+        0% { transform: translateY(0) scale(1); }
+        100% { transform: translateY(-40px) scale(1.08);}
       }
-      .bubble2 {
-        width: 90px;
-        height: 90px;
-        background: #f8b1fc;
-        top: 60%;
-        right: -40px;
+      .hero-section {
+        position: relative;
+        padding: 5rem 0 6rem;
+        background: #f6fcfd;
+        text-align: center;
+        overflow: hidden;
       }
-      .bubble3 {
+      .hero-section .container {
+        position: relative;
+        z-index: 1;
+      }
+      .bubble-logo {
         width: 60px;
         height: 60px;
-        background: #03c3ec;
-        top: 80px;
-        right: 80px;
-      }
-      .trusted-logos img {
-        max-height: 36px;
-        margin: 0 24px 0 0;
-        filter: grayscale(100%);
-        opacity: 0.75;
-      }
-      .trusted-logos img:last-child {
-        margin-right: 0;
+        object-fit: contain;
+        margin-bottom: 1rem;
       }
       .section-title {
         font-weight: 700;
-        margin-bottom: 1rem;
+        margin-bottom: 1.25rem;
       }
       .feature-icon {
-        font-size: 2.5rem;
-        line-height: 1;
-        color: #6a93ff;
-        margin-bottom: 16px;
+        width: 48px; height: 48px; background: #e8f4fb; border-radius: 1rem;
+        display: flex; align-items: center; justify-content: center; font-size: 1.75rem; color: #61b6e6;
+        margin-bottom: 1rem;
       }
-      .testimonial {
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 2px 12px 0 rgba(0,0,0,.06);
-        padding: 24px;
-        margin-bottom: 32px;
-      }
-      .contact-bg {
-        background: #f8fafc;
-        border-radius: 16px;
-        padding: 32px 24px;
-      }
-      footer {
-        background: #212529;
-        color: #fff;
-        padding: 32px 0 24px;
-      }
-      .footer-link {
-        color: #bfbfbf;
-        text-decoration: none;
-      }
-      .footer-link:hover {
-        color: #ffffff;
-        text-decoration: underline;
+      @media (max-width: 575.98px) {
+        .hero-section { padding: 3rem 0 4rem; }
       }
     </style>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          </ul>
-        </div>
+    <!-- Hero Section with Bubble BG -->
+    <header class="hero-section">
+      <div class="bubble-bg">
+        <div class="bubble bubble1"></div>
+        <div class="bubble bubble2"></div>
+        <div class="bubble bubble3"></div>
+        <div class="bubble bubble4"></div>
+        <div class="bubble bubble5"></div>
       </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero-bg position-relative">
-      <div class="bubble bubble1"></div>
-      <div class="bubble bubble2"></div>
-      <div class="bubble bubble3"></div>
-      <div class="container py-5 position-relative" style="z-index:2;">
-        <div class="row align-items-center">
-          <div class="col-lg-6 text-center text-lg-start">
-            <h1 class="display-4 fw-bold mb-3">
-              Elevate your brand with <span style="color:#6a93ff;">Bubble Agency</span>
-            </h1>
-            <p class="lead mb-4">
-              We create seamless, visually stunning digital experiences that help your business shine. From branding to web solutions—let's grow together.
-            </p>
-            <a href="#contact" class="btn btn-primary btn-lg me-2">Get Started</a>
-            <a href="#services" class="btn btn-outline-secondary btn-lg">See Services</a>
-          </div>
-          <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end mt-4 mt-lg-0">
-            <img src="https://cdn.pixabay.com/photo/2025/06/15/11/03/oak-9661039_960_720.jpg"
-                 alt="Bubble agency illustration"
-                 class="img-fluid shadow rounded"
-                 style="max-width: 370px;">
+      <div class="container position-relative">
+        <img src="https://img.icons8.com/color/96/000000/bubbles.png" alt="Bubble Agency Logo" class="bubble-logo" />
+        <h1 class="display-4 fw-bold mb-3">Bubble Agency</h1>
+        <p class="lead mb-4 fw-medium">Launch your No-Code dreams.<br>
+        Custom Bubble app solutions for startups, founders, and enterprises.</p>
+        <a href="#contact" class="btn btn-primary btn-lg px-4 py-2 shadow-lg">Start Your Project</a>
+      </div>
+    </header>
+    <!-- About Section -->
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="row justify-content-center mb-4">
+          <div class="col-lg-8">
+            <h2 class="section-title text-center">About Us</h2>
+            <p class="text-center">We are a team of certified Bubble professionals obsessed with building future-proof, scalable web applications—no code required. Whether you need an MVP, prototype, or enterprise-grade solution, we deliver at startup speed.</p>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Trusted by -->
-    <section class="py-4 border-bottom bg-white">
-      <div class="container">
-        <div class="row align-items-center justify-content-center text-center">
-          <div class="col-md-2 mb-2 mb-md-0 fw-medium text-muted">
-            Trusted by:
-          </div>
-          <div class="col-md-10 trusted-logos d-flex flex-wrap align-items-center justify-content-center">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png" alt="Company 1 logo" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Company 2 logo" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Company 3 logo" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Amazon_Logo.svg" alt="Company 4 logo" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Company 5 logo" />
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Services Section -->
-    <section class="py-5" id="services">
+    <section class="py-5 bg-light">
       <div class="container">
-        <h2 class="section-title text-center mb-5">Our Services</h2>
-        <div class="row gx-4 gy-4">
+        <h2 class="section-title text-center">Our Services</h2>
+        <div class="row g-4 mt-3 justify-content-center">
           <div class="col-md-4">
-            <div class="text-center h-100 p-4 border rounded bg-white">
-              <div class="feature-icon mb-3">
-                <span aria-hidden="true">🎨</span>
+            <div class="card shadow-sm border-0 h-100 text-center">
+              <div class="feature-icon mx-auto mt-3"><span>🚀</span></div>
+              <div class="card-body">
+                <h5 class="card-title fw-semibold">Bubble App Development</h5>
+                <p class="card-text">From concept to launch, we create robust, fully custom Bubble applications tailored to your unique requirements.</p>
               </div>
-              <h5 class="fw-semibold mb-2">Brand Identity</h5>
-              <p>
-                Distinctive branding to make your business unforgettable—logos, style guides, and full brand packages.
-              </p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="text-center h-100 p-4 border rounded bg-white">
-              <div class="feature-icon mb-3">
-                <span aria-hidden="true">💻</span>
+            <div class="card shadow-sm border-0 h-100 text-center">
+              <div class="feature-icon mx-auto mt-3"><span>⚡</span></div>
+              <div class="card-body">
+                <h5 class="card-title fw-semibold">Rapid Prototyping</h5>
+                <p class="card-text">Get your MVP or prototype in days, not months. Perfect for pitching or market testing your ideas fast.</p>
               </div>
-              <h5 class="fw-semibold mb-2">Web Design &amp; Development</h5>
-              <p>
-                Modern, performant, and accessible web solutions tailored to your goals—landing pages, e-commerce, and more.
-              </p>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="text-center h-100 p-4 border rounded bg-white">
-              <div class="feature-icon mb-3">
-                <span aria-hidden="true">📈</span>
+            <div class="card shadow-sm border-0 h-100 text-center">
+              <div class="feature-icon mx-auto mt-3"><span>🔗</span></div>
+              <div class="card-body">
+                <h5 class="card-title fw-semibold">API & Integrations</h5>
+                <p class="card-text">We seamlessly connect your apps to payments, CRMs, automations, and more—expanding what Bubble can do.</p>
               </div>
-              <h5 class="fw-semibold mb-2">Digital Marketing</h5>
-              <p>
-                Amplify your reach and conversion with data-driven campaigns—SEO, ads, and content strategy.
-              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-
+    <!-- Portfolio Section -->
+    <section class="py-5 bg-white" id="portfolio">
+      <div class="container">
+        <h2 class="section-title text-center">Featured Work</h2>
+        <div class="row g-4 mt-3">
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Startup MVP Screenshot">
+              <div class="card-body">
+                <h5 class="card-title">Startup MVP Launch</h5>
+                <p class="card-text">A high-velocity MVP for a fintech startup—built, tested, and shipped in under 4 weeks with Bubble.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Internal Tool Screenshot">
+              <div class="card-body">
+                <h5 class="card-title">Enterprise Internal Tool</h5>
+                <p class="card-text">Automated reporting and workflows for a SaaS provider, saving 20hrs/week using a Bubble-powered dashboard.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Ecommerce Marketplace Screenshot">
+              <div class="card-body">
+                <h5 class="card-title">Ecommerce Marketplace</h5>
+                <p class="card-text">No-code marketplace with complex integrations—scalable to thousands of users, built 100% in Bubble.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Testimonials Section -->
-    <section class="py-5 bg-light border-bottom" id="testimonials">
+    <section class="py-5 bg-light">
       <div class="container">
-        <h2 class="section-title text-center mb-5">What Our Clients Say</h2>
-        <div class="row gx-4 gy-4">
-          <div class="col-md-6">
-            <div class="testimonial h-100">
-              <p class="mb-3">
-                <strong>“Bubble Agency propelled our brand forward—sleek design, flawless delivery!”</strong>
-              </p>
-              <div class="d-flex align-items-center">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client photo" class="rounded-circle me-3" width="48" height="48">
-                <div>
-                  <span class="fw-semibold">Alex R.</span>
-                  <br>
-                  <small class="text-muted">Founder, Techspire</small>
-                </div>
-              </div>
-            </div>
+        <h2 class="section-title text-center">What Our Clients Say</h2>
+        <div class="row g-4 justify-content-center mt-3">
+          <div class="col-lg-4 col-md-6">
+            <blockquote class="blockquote bg-white p-4 rounded-3 shadow-sm h-100">
+              <p class="mb-3">“Bubble Agency transformed our startup vision into reality. Fast, professional, zero code headaches.”</p>
+              <footer class="blockquote-footer">Sophie L., Founder, Fintech Startup</footer>
+            </blockquote>
           </div>
-          <div class="col-md-6">
-            <div class="testimonial h-100">
-              <p class="mb-3">
-                <strong>“Impressive creativity and strategy. Our site conversion improved by 53%!”</strong>
-              </p>
-              <div class="d-flex align-items-center">
-                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Client photo" class="rounded-circle me-3" width="48" height="48">
-                <div>
-                  <span class="fw-semibold">Linda W.</span>
-                  <br>
-                  <small class="text-muted">CMO, Marketwise</small>
-                </div>
-              </div>
-            </div>
+          <div class="col-lg-4 col-md-6">
+            <blockquote class="blockquote bg-white p-4 rounded-3 shadow-sm h-100">
+              <p class="mb-3">“Their rapid prototyping let us test our product in days. Highly recommend for innovation teams.”</p>
+              <footer class="blockquote-footer">Rahul T., Product Manager</footer>
+            </blockquote>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <blockquote class="blockquote bg-white p-4 rounded-3 shadow-sm h-100">
+              <p class="mb-3">“Seamless integrations and thoughtful UX. Bubble Agency are true Bubble experts.”</p>
+              <footer class="blockquote-footer">Camila W., Operations Lead</footer>
+            </blockquote>
           </div>
         </div>
       </div>
     </section>
-
+    <!-- Call to Action Section -->
+    <section class="py-5 bg-primary text-white">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-3">Ready to build your Bubble app?</h2>
+        <p class="lead mb-4">Let’s launch your project. Get a free proposal or book a strategy call with our expert team today!</p>
+        <a href="#contact" class="btn btn-light btn-lg px-4 py-2 me-2 mb-2">Get Started</a>
+        <a href="#portfolio" class="btn btn-outline-light btn-lg px-4 py-2 mb-2">View Work</a>
+      </div>
+    </section>
     <!-- Contact Section -->
-    <section class="py-5" id="contact">
+    <section class="py-5 bg-white" id="contact">
       <div class="container">
+        <h2 class="section-title text-center">Contact Us</h2>
         <div class="row justify-content-center">
           <div class="col-lg-7">
-            <div class="contact-bg">
-              <h2 class="section-title text-center mb-3">Let's Connect</h2>
-              <p class="text-center mb-4">Ready to bubble up your brand? Fill in your details and we'll reach out soon.</p>
-              <form>
-                <div class="mb-3">
-                  <label for="name" class="form-label">Your Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email address</label>
-                  <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
-                </div>
-                <div class="mb-3">
-                  <label for="message" class="form-label">Message</label>
-                  <textarea class="form-control" id="message" rows="4" placeholder="Tell us about your project..."></textarea>
-                </div>
-                <div class="d-grid">
-                  <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
-                </div>
-              </form>
-            </div>
+            <form class="p-4 p-md-5 shadow rounded-3 bg-light">
+              <div class="mb-3">
+                <label for="name" class="form-label fw-semibold">Your Name</label>
+                <input type="text" id="name" class="form-control" placeholder="Your name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label fw-semibold">Email address</label>
+                <input type="email" id="email" class="form-control" placeholder="you@email.com" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label fw-semibold">Message</label>
+                <textarea id="message" class="form-control" rows="4" placeholder="Tell us about your project..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100 fw-semibold py-2">Send Message</button>
+            </form>
           </div>
         </div>
       </div>
     </section>
-
     <!-- Footer -->
-    <footer class="mt-5">
-      <div class="container text-center">
-        <div class="mb-2">
-          <a href="#" class="footer-link mx-2">Privacy Policy</a>
-          |
-          <a href="#" class="footer-link mx-2">Terms of Service</a>
-        </div>
-        <div>
-          &copy; 2024 Bubble Agency. Made with <span aria-label="Love" role="img" style="color:#f87070;">&#10084;&#65039;</span>
-        </div>
-        <div class="mt-2">
-          <a href="#" class="footer-link mx-2" aria-label="X"><svg width="20" height="20" fill="currentColor" aria-hidden="true"><use xlink:href="#icon-x"></use></svg></a>
-          <a href="#" class="footer-link mx-2" aria-label="LinkedIn"><svg width="20" height="20" fill="currentColor" aria-hidden="true"><use xlink:href="#icon-linkedin"></use></svg></a>
-          <a href="#" class="footer-link mx-2" aria-label="Instagram"><svg width="20" height="20" fill="currentColor" aria-hidden="true"><use xlink:href="#icon-instagram"></use></svg></a>
-        </div>
+    <footer class="py-4 bg-light">
+      <div class="container text-center small text-muted">
+        &copy; 2024 Bubble Agency. Crafted with 🫧 using Bootstrap.
       </div>
-      <svg style="display:none;">
-        <symbol id="icon-x" viewBox="0 0 32 32"><path d="M13.545 16.305l-10.99-13.29h4.05l8.858 10.704 8.07-10.704h4.467l-10.351 13.57 11.678 14.075h-4.054l-9.536-11.66-8.766 11.66h-4.464l10.998-14.36z"></path></symbol>
-        <symbol id="icon-linkedin" viewBox="0 0 32 32"><path d="M27 0h-22c-2.75 0-5 2.25-5 5v22c0 2.75 2.25 5 5 5h22c2.75 0 5-2.25 5-5v-22c0-2.75-2.25-5-5-5zM10 27h-5v-14h5v14zM7.5 11.6c-1.6 0-2.5-1.1-2.5-2.3s.9-2.3 2.5-2.3c1.6 0 2.5 1.1 2.5 2.3s-.9 2.3-2.5 2.3zM27 27h-5v-7c0-1.7-.6-2.9-2.1-2.9-1.1 0-1.8.7-2.1 1.4-.1.2-.1.5-.1.8v7.7h-5v-14h5v1.9c.7-1.1 2-2.6 4.7-2.6 3.3 0 5.6 2.1 5.6 6.6v8.1z"></path></symbol>
-        <symbol id="icon-instagram" viewBox="0 0 32 32"><path d="M16 7.9a8.1 8.1 0 1 0 0 16.2 8.1 8.1 0 0 0 0-16.2zm0 13.3a5.2 5.2 0 1 1 0-10.4 5.2 5.2 0 0 1 0 10.4zm8.6-13.8a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zm5.4 1.9c-.1-2.2-.6-4.2-2.3-5.9s-3.7-2.3-5.9-2.3c-2.3-.1-9.1-.1-11.4 0-2.2.1-4.2.6-5.9 2.3s-2.3 3.7-2.3 5.9c-.1 2.3-.1 9.2 0 11.5.1 2.2.6 4.2 2.3 5.9s3.7 2.3 5.9 2.3c2.3.1 9.1.1 11.4 0 2.9.2 5.2 1.9 6.3 4.6.6 1.4.9 3.8.9 6.9s-.3 5.5-.9 6.9z"></path></symbol>
-      </svg>
     </footer>
-
-
-<!--
-  PANDA IMAGE SELECTION SCRIPT v1
-  ===============================
-  Captures all image clicks inside the iframe and sends metadata to Bubble via postMessage.
-  Metadata captured: url, width, height, alt
-    ⚠ Do NOT remove or modify this script unless explicitly instructed by the admin.
--->
-<script src="https://bfwqdadlcyndtaqmqtci.supabase.co/storage/v1/object/public/pandajs/panda-image-selection-v1.js" defer></script>
-
-<!--
-  PANDA BRANDING SCRIPT
-  ====================
-  Handles Panda-specific branding, logos, placeholders, and runtime injection for the iframe/editor.
-    ⚠ Do NOT remove or modify this script unless explicitly instructed by the admin.
--->
-<script src="https://bfwqdadlcyndtaqmqtci.supabase.co/storage/v1/object/public/pandajs/panda-branding.js" defer></script>
-    
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
